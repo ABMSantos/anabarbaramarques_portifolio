@@ -1,0 +1,147 @@
+/* Importando fontes bonitas do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Layout */
+.toggle {
+    display: none; /* esconde o checkbox */
+}
+
+.pagina {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 2;
+}
+
+.toggle:checked + .capa {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.05);
+}
+
+.logo {
+    max-width: 350px; /* ajusta o tamanho da logo */
+    height: auto;
+}
+
+.conteudo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100vh; /* garante altura total */
+    display: flex;
+    align-items: center; /* centraliza verticalmente */
+    justify-content: center; /* centraliza horizontalmente */
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    color: silver;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+
+/* Tipografia */
+.titulo {
+    color: white;
+}
+
+.titulo2 {
+    color: #22D4FD;
+}
+
+/* Estrutura principal */
+.apresentacao {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 5%;
+}
+
+/* Texto */
+.apresentacao__conteudo {
+    max-width: 550px;
+    text-align: left;
+}
+
+.apresentacao__conteudo__titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.0rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    line-height: 1.3;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.0rem;
+    margin-bottom: 24px;
+    color: #ccc;
+}
+
+/* Links como botões */
+.apresentacao__links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.apresentacao__links a {
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    background-color: #22D4FD;
+    padding: 12px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(34, 212, 253, 0.3);
+}
+
+.apresentacao__links a:hover {
+    background-color: #1ab1d9;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(34, 212, 253, 0.5);
+}
+
+/* Imagem */
+.apresentacao__imagem {
+    max-width: 300px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.7rem;
+    border-top: 1px solid #333;
+    color: #777;
+}
