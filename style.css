@@ -35,14 +35,14 @@
     z-index: 2;
 }
 
-.toggle:checked + .capa {
+.toggle:checked ~ .capa {
     opacity: 0;
     pointer-events: none;
     transform: scale(1.05);
 }
 
 .logo {
-    max-width: 350px; /* ajusta o tamanho da logo */
+    max-width: 300px; /* ajusta o tamanho da logo */
     height: auto;
 }
 
@@ -56,16 +56,15 @@
     justify-content: center; /* centraliza horizontalmente */
 }
 
+/* Tipografia */
 body {
     margin: 0;
-    background-color: #000;
+    background-color: #000; /* fundo principal da página */
     color: silver;
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
 }
 
-
-/* Tipografia */
 .titulo {
     color: white;
 }
@@ -81,7 +80,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 40px;
-    padding: 0 5%;
+    padding: 0 5%; /* só horizontal */
+    height: 100%; /* garante que ocupe a altura da .conteudo */
 }
 
 /* Texto */
@@ -139,9 +139,91 @@ body {
 
 /* Footer */
 footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
     text-align: center;
-    padding: 10px;
     font-size: 0.7rem;
-    border-top: 1px solid #333;
     color: #777;
+    flex-direction: column; /* empilha o conteúdo */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* impede rolagem */
+}
+
+/* ===== Responsividade ===== */
+
+/* Tablets grandes e desktops menores */
+@media (max-width: 1024px) {
+    .apresentacao {
+        gap: 30px;
+    }
+
+    .apresentacao__imagem {
+        max-width: 250px;
+    }
+
+    .logo {
+        max-width: 300px;
+    }
+}
+
+/* Tablets e celulares médios */
+@media (max-width: 768px) {
+    .apresentacao {
+        flex-direction: column; /* empilha conteúdo e imagem */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .apresentacao__conteudo {
+        max-width: 90%;
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 1.5rem;
+    }
+
+    .apresentacao__conteudo__texto {
+        font-size: 0.9rem;
+    }
+
+    .apresentacao__links a {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        max-width: 70vw; /* ocupa 70% da tela */
+        height: auto;
+    }
+
+    .apresentacao__imagem {
+        max-width: 60vw; /* ocupa 60% da tela */
+        height: auto;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .apresentacao__conteudo__titulo {
+        font-size: 1.3rem;
+    }
+
+    .apresentacao__conteudo__texto {
+        font-size: 0.8rem;
+    }
+
+    .apresentacao__links a {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .logo {
+        max-width: 80vw;
+    }
+
+    .apresentacao__imagem {
+        max-width: 70vw;
+    }
 }
